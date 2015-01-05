@@ -1,4 +1,9 @@
 kicksapp-wordpress
 ==================
 
-Kickstarter template for wordpress applications
+> Kickstarter template for wordpress applications
+
+
+Under development
+-----------------
+

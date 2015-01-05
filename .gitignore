@@ -1,0 +1,24 @@
+# Eclipse
+.settings
+.project
+
+# Mac OS
+.DS_Store
+
+# Node
+node_modules
+
+# Composer
+composer.phar
+composer.lock
+
+# Build
+tmp
+dist
+
+# Test
+test
+
+# Vendor
+wp
+vendor

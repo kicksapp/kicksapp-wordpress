@@ -1,0 +1,11 @@
+{
+  "db": {
+    "name": "production",
+    "user": "production",
+    "password": "production",
+    "host": "localhost",
+    "charset": "utf8",
+    "collate": ""
+  },
+  "debug": false 
+}

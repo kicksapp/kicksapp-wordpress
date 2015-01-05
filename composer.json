@@ -1,0 +1,96 @@
+{
+  "minimum-stability": "dev",
+  "config": {
+    "vendor-dir": "vendor/lib"
+  },
+  "repositories": [
+    {
+      "type":"composer",
+      "url":"http://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress",
+        "type": "webroot",
+        "version": "4.1",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/WordPress/WordPress/archive/4.1.zip"
+        },
+        "require" : {
+          "fancyguy/webroot-installer": "1.*"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-bootstrap-navwalker",
+        "version": "2.0.4",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/twittem/wp-bootstrap-navwalker.git",
+          "reference": "2.0.4"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-bootstrap",
+        "version": "dev-master",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/dswebsme/wp-bootstrap.git",
+          "reference": "master"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wp-asset-manifest",
+        "version": "dev-master",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/benignware/wp-asset-manifest.git",
+          "reference": "master"
+        }
+      }
+    }
+  ],
+  "require": {
+    "wordpress": "4.1",
+    "fancyguy/webroot-installer": "1.0.0",
+    "wp-bootstrap-navwalker": "2.0.4",
+    "wp-bootstrap": "master",
+    "wp-asset-manifest": "master",
+    "xrstf/composer-php52": "1.*"
+  },
+  "scripts": {
+      "post-install-cmd": [
+          "xrstf\\Composer52\\Generator::onPostInstallCmd"
+      ],
+      "post-update-cmd": [
+          "xrstf\\Composer52\\Generator::onPostInstallCmd"
+      ],
+      "post-autoload-dump": [
+          "xrstf\\Composer52\\Generator::onPostInstallCmd"
+      ]
+  },
+  "autoload": {
+    "psr-0": {
+        "wp_bootstrap_navwalker": "wp-bootstrap-navwalker"
+    }
+  },
+  "extra": {
+    "webroot-dir": "wp",
+    "webroot-package": "wordpress",
+    "installer-paths": {
+        "app/plugins/{$name}/": ["type:wordpress-plugin"],
+        "app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+        "app/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  }
+}
